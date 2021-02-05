@@ -1,17 +1,10 @@
-@import './variables.scss';
+@import './_variables.scss';
 @import 'bootstrap';
-@import './overrides.scss';
+@import './_overrides.scss';
 
-.app-font {
-  font-family: 'Sahitya', serif;
- }
-
- #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+#app {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  -moz-osx-font-smoothing: grayscale;;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,4 +14,8 @@ main {
   flex-grow: 1;
 }
 
+
+.title-font {
+  font-family: Quicksand
+}
 

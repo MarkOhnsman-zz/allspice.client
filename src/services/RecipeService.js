@@ -1,12 +1,11 @@
 import { AppState } from '../AppState'
-import Recipe from '../models/Recipe'
 import { api } from './AxiosService'
 
-class RecipeSerivce {
+class RecipeService {
   async getAll() {
-    const res = await api.get('recipes')
-    AppState.recipes = res.data.map(r => new Recipe(r))
+    const res = await api.get('/recipes')
+    AppState.recipes = res.data
   }
 }
 
-export const recipeService = new RecipeSerivce()
+export const recipeService = new RecipeService()
