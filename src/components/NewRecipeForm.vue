@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="createRecipe" class="d-flex flex-column align-items-end">
+  <form @submit.prevent="createRecipe" class="d-flex flex-column align-items-end col">
     <div class="card bg-white p-3 m-2 shadow">
       <div class="form-group mx-2">
         <label for="name m-0">Your Name</label>
