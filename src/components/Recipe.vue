@@ -21,6 +21,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.recipe {
+  cursor: pointer;
+  transition: .25s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
 </style>
