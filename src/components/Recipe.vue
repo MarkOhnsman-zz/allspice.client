@@ -1,13 +1,13 @@
 <template>
   <div class="recipe col-3 my-3">
     <router-link :to="{name: 'RecipeDetails', params: {id: recipe.id}}">
-      <div class="card shadow">
+      <div class="card shadow bg-secondary">
         <img class="card-img-top" :src="recipe.imgUrl" alt="">
         <div class="card-body">
           <h4 class="card-title">
             {{ recipe.title }}
           </h4>
-          <p class="card-text">
+          <p class="card-text text-primary">
             {{ recipe.creatorName }}
           </p>
         </div>
@@ -27,10 +27,14 @@ export default {
   cursor: pointer;
   transition: .25s ease;
   &:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px);
   }
 }
 a {
   color: black;
+}
+
+.card-title {
+  text-shadow: 1px 1px black;
 }
 </style>
