@@ -31,6 +31,16 @@
                required
         >
       </div>
+      <div class="form-group mx-2">
+        <label for="name m-0">Image Url</label>
+        <input type="text"
+               class="form-control ml-2"
+               aria-describedby="helpId"
+               placeholder="Image Url..."
+               v-model="state.newRecipe.imgUrl"
+               required
+        >
+      </div>
       <div class="d-flex justify-content-between">
         <button type="button" class="btn btn-danger" @click="cancelForm">
           Cancel
@@ -65,7 +75,8 @@ export default {
         state.newRecipe = {
           creatorName: '',
           title: '',
-          description: ''
+          description: '',
+          imgUrl: ''
         }
       },
       async createRecipe() {

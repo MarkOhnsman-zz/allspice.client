@@ -3,6 +3,7 @@
     <navbar />
   </header>
   <main>
+    <recipe-form v-if="state.showForm" />
     <router-view />
   </main>
   <footer class="container-fluid">
@@ -15,10 +16,22 @@
 </template>
 
 <script>
+import { computed, reactive } from 'vue'
 import Navbar from './components/Navbar'
+import RecipeForm from './components/NewRecipeForm'
+import { AppState } from './AppState'
 export default {
+  setup() {
+    const state = reactive({
+      showForm: computed(() => AppState.showForm)
+    })
+    return {
+      state
+    }
+  },
   components: {
-    Navbar
+    Navbar,
+    RecipeForm
   }
 }
 </script>

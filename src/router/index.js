@@ -8,7 +8,7 @@ const routes = [
     name: 'Home',
     component: Home
   }, {
-    path: '/recipes',
+    path: '/recipes/:id',
     name: 'RecipeDetails',
     component: RecipeDetails
   }

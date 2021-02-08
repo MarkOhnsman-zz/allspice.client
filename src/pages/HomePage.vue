@@ -1,10 +1,6 @@
 <template>
   <div class="home container-fluid">
     <div class="row">
-      <recipe-form v-if="state.showForm" />
-    </div>
-
-    <div class="row">
       <recipe v-for="recipe in state.recipes" :key="recipe.id" :recipe="recipe" />
     </div>
   </div>
@@ -14,7 +10,6 @@
 import { computed, onMounted, reactive } from 'vue'
 import { recipeService } from '../services/RecipeService.js'
 import { AppState } from '../AppState.js'
-import RecipeForm from '../components/NewRecipeForm'
 import Recipe from '../components/Recipe'
 
 export default {
@@ -33,7 +28,6 @@ export default {
     }
   },
   components: {
-    RecipeForm,
     Recipe
   }
 
