@@ -5,7 +5,7 @@
     </div>
 
     <div class="row">
-      <recipe />
+      <recipe v-for="recipe in state.recipes" :key="recipe.id" :recipe="recipe" />
     </div>
   </div>
 </template>

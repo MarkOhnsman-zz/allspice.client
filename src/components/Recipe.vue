@@ -2,13 +2,13 @@
   <div class="recipe col-3 my-3">
     <div class="card shadow">
       <!-- ANCHOR Add Props -->
-      <img class="card-img-top" src="//placehold.it/500x300" alt="">
+      <img class="card-img-top" :src="recipe.imgUrl" alt="">
       <div class="card-body">
         <h4 class="card-title">
-          Title
+          {{ recipe.title }}
         </h4>
         <p class="card-text">
-          Author
+          {{ recipe.creatorName }}
         </p>
       </div>
     </div>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-
+  props: ['recipe']
 }
 </script>
 
