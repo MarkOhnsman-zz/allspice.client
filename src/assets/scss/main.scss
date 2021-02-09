@@ -62,3 +62,11 @@ main {
   }
 }
 
+.add {
+  color: lighten($secondary, 20%);
+  cursor: pointer;
+  &:hover {
+    color: $primary
+  }
+}
+

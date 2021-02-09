@@ -4,8 +4,8 @@
       <div class="d-flex px-3 z-1">
         <div class="bg-light pr-2 p-3 mt-3 recipe-title d-flex align-items-center">
           <h1>{{ state.recipe.title }}</h1>
-          <i class="fas fa-pencil-alt ml-5 mr-2 fa-lg icon-theme icon-primary icon-lg" v-if="!state.baseEdit" @click="state.baseEdit = true"></i>
-          <i class="fas fa-times ml-5 mr-2 fa-lg icon-theme icon-primary icon-lg" @click="state.baseEdit = false" v-else></i>
+          <i title="edit" class="fas fa-pencil-alt ml-5 mr-2 fa-lg icon-theme icon-primary icon-lg" v-if="!state.baseEdit" @click="state.baseEdit = true"></i>
+          <i title="cancel" class="fas fa-times ml-5 mr-2 fa-lg icon-theme icon-primary icon-lg" @click="state.baseEdit = false" v-else></i>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
             <div class="ingredients">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
                 <h4>Ingredients</h4>
-                <i class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2"></i>
+                <i title="edit" class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2"></i>
               </div>
               <ul class="border rounded-bottom py-3">
                 <li v-for="ingredient in state.recipe.ingredients" :key="ingredient.key">
@@ -37,8 +37,8 @@
             <div class="steps">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
                 <h4>Steps</h4>
-                <i class="fas fa-pencil-alt icon-theme icon-secondary m-2" @click="state.stepEdit = true" v-if="!state.stepEdit"></i>
-                <i class="fas fa-times icon-theme icon-secondary m-2" @click="state.stepEdit = false" v-else></i>
+                <i title="edit" class="fas fa-pencil-alt icon-theme icon-secondary m-2" @click="state.stepEdit = true" v-if="!state.stepEdit"></i>
+                <i title="cancel" class="fas fa-times icon-theme icon-secondary m-2" @click="state.stepEdit = false" v-else></i>
               </div>
               <ol class="border rounded-bottom py-3 px-5" v-if="!state.stepEdit">
                 <li class="mb-3" v-for="step in state.recipe.steps" :key="step">
