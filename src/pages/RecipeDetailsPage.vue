@@ -2,8 +2,9 @@
   <div class="container-fluid recipe-details">
     <div class="row">
       <div class="d-flex px-3 z-1">
-        <div class="bg-light pr-2 p-3 mt-3 recipe-title">
+        <div class="bg-light pr-2 p-3 mt-3 recipe-title d-flex align-items-center">
           <h1>{{ state.recipe.title }}</h1>
+          <i class="fas fa-pencil-alt ml-5 mr-2 fa-lg icon-theme icon-primary icon-lg"></i>
         </div>
       </div>
     </div>
@@ -21,23 +22,25 @@
           </div>
           <div class="col-md-6 ">
             <div class="ingredients">
-              <div class="bg-primary rounded-top p-2 pl-3 text-uppercase">
+              <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
                 <h4>Ingredients</h4>
+                <i class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2"></i>
               </div>
               <ul class="border rounded-bottom py-3">
-                <li>Test Ingredients</li>
-                <li>Test Ingredients</li>
-                <li>Test Ingredients</li>
+                <li v-for="ingredient in state.recipe.ingredients" :key="ingredient.key">
+                  {{ ingredient.quantity }} {{ ingredient.name }}
+                </li>
               </ul>
             </div>
             <div class="ingredients">
-              <div class="bg-primary rounded-top p-2 pl-3 text-uppercase">
+              <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
                 <h4>Steps</h4>
+                <i class="fas fa-pencil-alt icon-theme icon-secondary m-2"></i>
               </div>
-              <ol class="border rounded-bottom py-3">
-                <li>Test Ingredients</li>
-                <li>Test Ingredients</li>
-                <li>Test Ingredients</li>
+              <ol class="border rounded-bottom py-3 px-5">
+                <li class="mb-3" v-for="step in state.recipe.steps" :key="step">
+                  {{ step }}
+                </li>
               </ol>
             </div>
           </div>
