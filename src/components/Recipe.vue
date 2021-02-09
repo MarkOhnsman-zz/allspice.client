@@ -18,7 +18,12 @@
 
 <script>
 export default {
-  props: ['recipe']
+  props: {
+    recipe: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
