@@ -5,7 +5,6 @@
         <label for="name m-0">Your Name</label>
         <input type="text"
                class="form-control ml-2"
-               aria-describedby="helpId"
                placeholder="Name..."
                v-model="state.newRecipe.creatorName"
                required
@@ -15,7 +14,6 @@
         <label for="name m-0">Title</label>
         <input type="text"
                class="form-control ml-2"
-               aria-describedby="helpId"
                placeholder="Title..."
                v-model="state.newRecipe.title"
                required
@@ -25,7 +23,6 @@
         <label for="name m-0">Image Url</label>
         <input type="text"
                class="form-control ml-2"
-               aria-describedby="helpId"
                placeholder="Image Url..."
                v-model="state.newRecipe.imgUrl"
                required
@@ -33,14 +30,13 @@
       </div>
       <div class="form-group mx-2">
         <label for="name m-0">Description</label>
-        <textarea type="text"
-                  class="form-control ml-2"
-                  aria-describedby="helpId"
-                  placeholder="Description..."
-                  v-model="state.newRecipe.description"
-                  rows="4"
-                  cols="50"
-                  required
+        <textarea
+          class="form-control ml-2"
+          placeholder="Description..."
+          v-model="state.newRecipe.description"
+          rows="4"
+          cols="50"
+          required
         >
         </textarea>
       </div>

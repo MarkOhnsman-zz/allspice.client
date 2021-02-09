@@ -16,6 +16,11 @@ class RecipeService {
     const res = await api.post('/recipes', recipe)
     AppState.recipes.push(res.data)
   }
+
+  async edit(recipe) {
+    const res = await api.put('/recipes/' + recipe.id, recipe)
+    AppState.activeRecipe = res.data
+  }
 }
 
 export const recipeService = new RecipeService()

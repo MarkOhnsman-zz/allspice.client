@@ -54,5 +54,11 @@ main {
   color: $white;
 }
 
-
+.delete {
+  color: lighten($danger, 20%);
+  cursor: pointer;
+  &:hover {
+    color: $danger
+  }
+}
 
