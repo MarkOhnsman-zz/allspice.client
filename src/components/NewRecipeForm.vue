@@ -22,16 +22,6 @@
         >
       </div>
       <div class="form-group mx-2">
-        <label for="name m-0">Description</label>
-        <input type="text"
-               class="form-control ml-2"
-               aria-describedby="helpId"
-               placeholder="Description..."
-               v-model="state.newRecipe.description"
-               required
-        >
-      </div>
-      <div class="form-group mx-2">
         <label for="name m-0">Image Url</label>
         <input type="text"
                class="form-control ml-2"
@@ -40,6 +30,19 @@
                v-model="state.newRecipe.imgUrl"
                required
         >
+      </div>
+      <div class="form-group mx-2">
+        <label for="name m-0">Description</label>
+        <textarea type="text"
+                  class="form-control ml-2"
+                  aria-describedby="helpId"
+                  placeholder="Description..."
+                  v-model="state.newRecipe.description"
+                  rows="4"
+                  cols="50"
+                  required
+        >
+        </textarea>
       </div>
       <div class="d-flex justify-content-between">
         <button type="button" class="btn btn-danger" @click="cancelForm">
