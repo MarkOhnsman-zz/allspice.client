@@ -19,6 +19,7 @@
                 {{ state.recipe.description }}
               </p>
             </div>
+            <form @submit.prevent="edit"></form>
           </div>
           <div class="col-md-6 ">
             <div class="ingredients">
