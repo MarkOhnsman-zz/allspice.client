@@ -26,13 +26,15 @@
             <div class="ingredients">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
                 <h4>Ingredients</h4>
-                <i title="edit" class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2"></i>
+                <i title="edit" class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2" v-if="!state.ingEdit" @click="state.ingEdit = true"></i>
+                <i title="cancel" class="fas fa-times icon-theme icon-secondary m-2" @click="state.ingEdit = false" v-else></i>
               </div>
-              <ul class="border rounded-bottom py-3">
+              <ul class="border rounded-bottom py-3" v-if="!state.ingEdit">
                 <li v-for="ingredient in state.recipe.ingredients" :key="ingredient.key">
                   {{ ingredient.quantity }} {{ ingredient.name }}
                 </li>
               </ul>
+              <ingredients-form v-else />
             </div>
             <div class="steps">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
@@ -61,6 +63,7 @@ import { recipeService } from '../services/RecipeService'
 import { AppState } from '../AppState'
 import RecipeBaseForm from '../components/RecipeBaseForm'
 import StepsForm from '../components/StepsForm'
+import IngredientsForm from '../components/IngredientsForm.vue'
 
 export default {
   setup() {
@@ -68,7 +71,8 @@ export default {
     const state = reactive({
       recipe: computed(() => AppState.activeRecipe),
       baseEdit: false,
-      stepEdit: false
+      stepEdit: false,
+      ingEdit: true
     })
 
     onMounted(() => {
@@ -81,12 +85,14 @@ export default {
   },
   components: {
     RecipeBaseForm,
-    StepsForm
+    StepsForm,
+    IngredientsForm
   }
 }
 </script>
 
-<style>
+<style
+    IngredientsForm>
 .recipe-title {
  box-shadow: 4px -1px 5px -4px rgba(0, 0, 0, 0.15), -4px -1px 5px -4px rgba(0, 0, 0, 0.15);
 }

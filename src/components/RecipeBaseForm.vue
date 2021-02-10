@@ -29,9 +29,11 @@
         v-model="state.recipe.description"
         rows="4"
         cols="50"
+        maxlength="500"
         required
       >
       </textarea>
+      <small class="form-text ml-2" :class="{'text-muted': !state.maxLength,'text-danger': state.maxLength}">Keep it short, no blogs here ({{ state.recipe.description.length }}/500)</small>
     </div>
     <div class="text-right mx-2">
       <button type="submit" class="btn btn-outline-success">
@@ -49,7 +51,8 @@ import { AppState } from '../AppState'
 export default {
   setup(props, { emit }) {
     const state = reactive({
-      recipe: computed(() => AppState.activeRecipe)
+      recipe: computed(() => AppState.activeRecipe),
+      maxLength: computed(() => state.recipe.description.length > 475)
     })
 
     return {

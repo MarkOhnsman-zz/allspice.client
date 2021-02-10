@@ -3,7 +3,7 @@
     <div class="form-group mx-2" v-for="(step, index) in state.steps" :key="index">
       <label for="name m-0" class="d-flex justify-content-between">
         <span>{{ index + 1 }}.</span>
-        <i class="fa fa-times delete" aria-hidden="true" title="Delete" @click="deleteStep(index)"></i>
+        <i class="fa fa-trash delete" aria-hidden="true" title="Delete" @click="deleteStep(index)"></i>
       </label>
       <textarea
         class="form-control ml-2"

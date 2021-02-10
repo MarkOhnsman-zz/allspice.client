@@ -55,7 +55,7 @@ main {
 }
 
 .delete {
-  color: lighten($danger, 20%);
+  color: lighten($secondary, 20%);
   cursor: pointer;
   &:hover {
     color: $danger
@@ -67,6 +67,14 @@ main {
   cursor: pointer;
   &:hover {
     color: $primary
+  }
+}
+
+.edit {
+  color: lighten($secondary, 20%);
+  cursor: pointer;
+  &:hover {
+    color: darken($primary, 20%)
   }
 }
 

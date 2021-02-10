@@ -36,9 +36,11 @@
           v-model="state.newRecipe.description"
           rows="4"
           cols="50"
+          maxlength="500"
           required
         >
         </textarea>
+        <small class="form-text ml-2" :class="{'text-muted': !state.maxLength,'text-danger': state.maxLength}">Keep it short, no blogs here ({{ state.newRecipe.description.length }}/500)</small>
       </div>
       <div class="d-flex justify-content-between">
         <button type="button" class="btn btn-danger" @click="cancelForm">
@@ -53,7 +55,7 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { AppState } from '../AppState'
 import { recipeService } from '../services/RecipeService'
 export default {
@@ -64,7 +66,8 @@ export default {
         creatorName: '',
         title: '',
         description: ''
-      }
+      },
+      maxLength: computed(() => state.newRecipe.description.length > 475)
     })
 
     return {
