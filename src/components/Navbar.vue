@@ -1,11 +1,11 @@
 <template>
   <nav class="navbar navbar-light bg-primary justify-content-between">
     <router-link class="navbar-brand text-dark d-flex align-items-center title-font" :to="{name: 'Home'}">
-      <h4>
-        <img class="mb-1 mr-1" src="../assets/img/soup.svg"> AllSpice
-      </h4>
+      <div class="theme-heading">
+        <img class="mb-1 mr-1" src="../assets/img/soup.svg" alt="allspice-logo"> AllSpice
+      </div>
     </router-link>
-    <button class="btn btn-outline-secondary" @click="toggleRecipe">
+    <button class="btn btn-outline-secondary" aria-label="new recipe" @click="toggleRecipe">
       <i v-if="state.showForm" class="fa fa-minus" aria-hidden="true"></i>
       <i v-else class="fa fa-plus" aria-hidden="true"></i>
     </button>

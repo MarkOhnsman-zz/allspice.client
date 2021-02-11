@@ -9,7 +9,7 @@
   <footer class="container-fluid">
     <div class="row">
       <div class="col bg-primary text-center p-2 text-secondary">
-        <p>Made with <img class="text-img" src="./assets/img/logo.png" /> by Codeworks</p>
+        <p>Made with <img class="text-img" src="./assets/img/logo.png" alt="vue-logo" /> by Codeworks</p>
       </div>
     </div>
   </footer>

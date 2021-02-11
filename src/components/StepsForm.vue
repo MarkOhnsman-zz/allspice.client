@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="edit" class="border rounded-bottom py-3 px-5">
     <div class="form-group mx-2" v-for="(step, index) in state.steps" :key="index">
-      <label for="name m-0" class="d-flex justify-content-between">
+      <label :for="'step-'+index" class="d-flex justify-content-between m-0">
         <span>{{ index + 1 }}.</span>
         <i class="fa fa-trash delete" aria-hidden="true" title="Delete" @click="deleteStep(index)"></i>
       </label>
@@ -11,6 +11,7 @@
         rows="4"
         cols="50"
         required
+        :id="'step-'+index"
       >
         </textarea>
     </div>

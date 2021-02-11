@@ -14,7 +14,7 @@
         <div class="recipe-card d-flex flex-wrap p-3 bg-light shadow">
           <div class="col-md-6">
             <div class="sticky-top py-2" v-if="!state.baseEdit">
-              <img class="img-fluid rounded mb-4" :src="state.recipe.imgUrl">
+              <img class="img-fluid rounded mb-4" :src="state.recipe.imgUrl" :alt="state.recipe.title">
 
               <p class="border-top border-primary pt-3 border-3">
                 {{ state.recipe.description }}
@@ -25,7 +25,9 @@
           <div class="col-md-6 ">
             <div class="ingredients">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
-                <h4>Ingredients</h4>
+                <h2 class="theme-heading">
+                  Ingredients
+                </h2>
                 <i title="edit" class="fas fa-pencil-alt ml-5 mr-2 icon-theme icon-secondary m-2" v-if="!state.ingEdit" @click="state.ingEdit = true"></i>
                 <i title="cancel" class="fas fa-times icon-theme icon-secondary m-2" @click="state.ingEdit = false" v-else></i>
               </div>
@@ -38,7 +40,9 @@
             </div>
             <div class="steps">
               <div class="bg-primary rounded-top p-2 pl-3 text-uppercase d-flex align-items-center justify-content-between">
-                <h4>Steps</h4>
+                <h2 class="theme-heading">
+                  Steps
+                </h2>
                 <i title="edit" class="fas fa-pencil-alt icon-theme icon-secondary m-2" @click="state.stepEdit = true" v-if="!state.stepEdit"></i>
                 <i title="cancel" class="fas fa-times icon-theme icon-secondary m-2" @click="state.stepEdit = false" v-else></i>
               </div>
@@ -72,7 +76,7 @@ export default {
       recipe: computed(() => AppState.activeRecipe),
       baseEdit: false,
       stepEdit: false,
-      ingEdit: true
+      ingEdit: false
     })
 
     onMounted(() => {

@@ -2,7 +2,7 @@
   <div class="recipe col-3 my-3">
     <router-link :to="{name: 'RecipeDetails', params: {id: recipe.id}}">
       <div class="card shadow bg-secondary">
-        <img class="card-img-top" :src="recipe.imgUrl" alt="">
+        <img class="card-img-top" :src="recipe.imgUrl" :alt="recipe.title">
         <div class="card-body">
           <h4 class="card-title">
             {{ recipe.title }}
